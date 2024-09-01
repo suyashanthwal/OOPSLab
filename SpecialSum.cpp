@@ -6,6 +6,8 @@ int next(int arr[] , int size) {
         
     }
 }
+
+
 int main() {
     int size , sum;
 
