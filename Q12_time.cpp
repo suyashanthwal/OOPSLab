@@ -18,22 +18,22 @@ public:
         this->seconds = seconds;
     }
 
-    void add(Time t3 , Time t1, Time t2) {
-        t3.seconds = t1.seconds + t2.seconds;
-        t3.minutes = t1.minutes + t2.minutes + (t3.seconds / 60);
-        t3.hours = t1.hours + t2.hours + (t3.minutes / 60);
-        t3.minutes = t3.minutes % 60;
-        t3.seconds = t3.seconds % 60;
+    void add(Time t1, Time t2) {
+        this->seconds = t1.seconds + t2.seconds;
+        this->minutes = t1.minutes + t2.minutes + (this->seconds / 60);
+        this->hours = t1.hours + t2.hours + (this->minutes / 60);
+        this->minutes = this->minutes % 60;
+        this->seconds = this->seconds % 60;
 
-        cout << t3.hours << ":" << t3.minutes << ":" << t3.seconds << endl;
+        cout << this->hours << ":" << this->minutes << ":" << this->seconds << endl;
     }
 };
 
 int main() {
-    Time t1(1, 50, 50);
-    Time t2(12, 30, 150);
+    Time t1(13, 43, 62);
+    Time t2(11, 42, 63);
     Time t3;
 
-    t3.add(t3,t1, t2);
+    t3.add(t1, t2);
     return 0;
 }
