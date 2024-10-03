@@ -1,26 +1,31 @@
 #include <iostream>
-using namespace std ;
+using namespace std;
 
-class calculate{
-    public :
-    void area(int b , int h){
-        cout << "AREA OF THE CIRCLE IS :" << 0.5*b*h << endl ;
+class calculate {
+    public:
+    // Overloaded function for the area of a triangle with 3 parameters
+    void area(int b, int h, bool isTriangle) {
+        if (isTriangle) {
+            cout << "AREA OF THE TRIANGLE IS: " << 0.5 * b * h << endl;
+        }
     }
 
-    void area(int s){
-        cout << "ARER OF SQUARE : " << s*s << endl ;
+    // Overloaded function for the area of a square
+    void area(int s) {
+        cout << "AREA OF SQUARE: " << s * s << endl;
     }
 
-    void area(int l , int b){
-        cout << "AREA OF RECTANGLE :" << l*b << endl ;
+    // Overloaded function for the area of a rectangle
+    void area(int l, int b) {
+        cout << "AREA OF RECTANGLE: " << l * b << endl;
     }
 };
 
 int main() {
-    calculate c1 ;
-    c1.area(10 , 50) ;
-    c1.area(20) ;
-    c1.area(10 ,20) ;
+    calculate c1;
+    c1.area(10, 50, true);  // Triangle
+    c1.area(20);            // Square
+    c1.area(10, 20);        // Rectangle
 
-return 0 ;
+    return 0;
 }
