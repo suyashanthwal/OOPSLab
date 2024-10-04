@@ -1,28 +1,52 @@
 #include <iostream>
-using namespace std ;
+using namespace std;
 
-class student {
-    private :
-    int marks = 100 ;
+class Student {
+private:
+    int marks = 100;          
+protected:
+    int id = 101;            
+public:
+    string name = "Suyash";  
 
-    public :
-    string name = "Suyash" ;
-
-    protected:
-    int id = 101 ;
+    void showMarks() {
+        cout << "Marks: " << marks << endl;  
+    }
 };
 
-class B:public student 
-{
-    public:
-    void display(){
-        cout << name << endl ;
+class PublicDerived : public Student {
+public:
+    void display() {
+        cout << "Name: " << name << endl;  
+        cout << "ID: " << id << endl;      
     }
+};
 
-    
+class ProtectedDerived : protected Student {
+public:
+    void display() {
+        cout << "Name: " << name << endl;  
+        cout << "ID: " << id << endl;      
+    }
+};
+
+class PrivateDerived : private Student {
+public:
+    void display() {
+        cout << "Name: " << name << endl;  
+        cout << "ID: " << id << endl;      
+    }
 };
 
 int main() {
-    B s1 ;
-    s1.display() ;
+    PublicDerived publicDerived;
+    publicDerived.display();
+    
+    ProtectedDerived protectedDerived;
+    protectedDerived.display();
+    
+    PrivateDerived privateDerived;
+    privateDerived.display();
+
+    return 0;
 }

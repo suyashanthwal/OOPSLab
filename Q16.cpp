@@ -1,38 +1,65 @@
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// class func {
-//     private:
-//         int x;
+class Counter {
+private:
+    int value;
 
-//     public:
-//         func(int x) {
-//             this->x = x;
-//         }
+public:
+    Counter(int v = 0) : value(v) {}
 
-//         friend func operator++(func x) {
-//         func f ;
-//          f.x = f.x+1 ;
-//          return f ;
-//         }
+    friend Counter operator++(Counter& c);
+    friend Counter operator++(Counter& c, int); 
+    friend Counter operator--(Counter& c); 
+    friend Counter operator--(Counter& c, int);
 
-//         friend func operator--(func f) {
-//             f.x = f.x-1 ;
-//             return func(f.x) ;
-//         }
+    void display() const {
+        cout << "Current Value: " << value << endl;
+    }
+};
 
-//         void display() {
-//             cout << x << endl;
-//         }
-// };
+Counter operator++(Counter& c) {
+    ++c.value;
+    return c;
+}
 
-// int main() {
-//     func f1(7);
-//     f1.display();
-//     f1++;
-//     f1.display();
-//     f1--;
-//     f1.display();
+Counter operator++(Counter& c, int) {
+    Counter temp = c;
+    c.value++;
+    return temp;
+}
 
-//     return 0;
-// }
+Counter operator--(Counter& c) {
+    --c.value;
+    return c;
+}
+
+Counter operator--(Counter& c, int) {
+    Counter temp = c;
+    c.value--;
+    return temp;
+}
+
+int main() {
+    Counter counter(5);
+    
+    counter.display();
+
+    ++counter;
+    cout << "After Pre-increment: ";
+    counter.display();
+
+    counter++ ;
+    cout << "After Post-increment: ";
+    counter.display();
+
+    --counter;
+    cout << "After Pre-decrement: ";
+    counter.display();
+
+    counter--;
+    cout << "After Post-decrement: ";
+    counter.display();
+
+    return 0;
+}
