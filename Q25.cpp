@@ -6,9 +6,9 @@ int main() {
     ifstream fin;
     ofstream fout;
     char ch;
-    cout << "Reading and writing character by character:" << endl;
-    fin.open("c://abc.txt");
-    fout.open("c://output_char.txt");
+    cout << "Reading and writing character by character: " << endl;
+    fin.open("C://Users//suyas//FULL C//2ND YEAR//abc.txt");
+    fout.open("C://Users//suyas//FULL C//2ND YEAR//output.txt");
     if (!fin) {
         cout << "Error opening input file." << endl;
         return 1;
@@ -29,9 +29,9 @@ int main() {
     cout << endl;
 
     // Reading and writing word by word
-    cout << "Reading and writing word by word:" << endl;
-    fin.open("c://abc.txt");
-    fout.open("c://output_word.txt");
+    cout << "\n Reading and writing word by word: " << endl;
+    fin.open("C://Users//suyas//FULL C//2ND YEAR//abc.txt");
+    fout.open("C://Users//suyas//FULL C//2ND YEAR//output.txt");
     if (!fin) {
         cout << "Error opening input file." << endl;
         return 1;
@@ -51,9 +51,9 @@ int main() {
     cout << endl;
 
     // Reading and writing line by line
-    cout << "Reading and writing line by line:" << endl;
-    fin.open("c://abc.txt");
-    fout.open("c://output_line.txt");
+    cout << "\n Reading and writing line by line:" << endl;
+    fin.open("C://Users//suyas//FULL C//2ND YEAR//abc.txt");
+    fout.open("C://Users//suyas//FULL C//2ND YEAR//output.txt");
     if (!fin) {
         cout << "Error opening input file." << endl;
         return 1;
