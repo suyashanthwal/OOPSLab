@@ -21,11 +21,11 @@ public:
     Time operator + (Time t) {
                 Time result;
         result.seconds = seconds + t.seconds;
-        result.minutes = minutes + t.minutes + (result.seconds / 60); // Adding extra minutes from seconds
-        result.seconds %= 60; // Converting seconds to a valid range
+        result.minutes = minutes + t.minutes + (result.seconds / 60);
+        result.seconds %= 60;
 
-        result.hours = hours + t.hours + (result.minutes / 60); // Adding extra hours from minutes
-        result.minutes %= 60; // Converting minutes to a valid range
+        result.hours = hours + t.hours + (result.minutes / 60);
+        result.minutes %= 60;
 
         return result;
     }
